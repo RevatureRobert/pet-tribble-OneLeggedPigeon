@@ -1,18 +1,6 @@
 
 n
 >src/main/java/com/revature/tribble/service/GenericService.java,b\4\b4400a8c9d6a462e14af29e882b881c3d9849550
-n
->src/main/java/com/revature/tribble/servlet/TribbleServlet.java,7\d\7da089e75958b8b4aa5e97d1c9b25e008b24fcaa
-m
-=src/main/java/com/revature/tribble/servlet/CustomServlet.java,a\c\ac99ba2bfb7d76eb5d644147274471cd5987a9c6
-j
-:src/main/java/com/revature/tribble/servlet/LabServlet.java,5\b\5b783c22d81b3f6db9dc917cac4e6827dae5dcfc
-r
-Bsrc/main/java/com/revature/tribble/controller/FrontController.java,8\d\8dd0881e64b6233a96ff1a76d8ecbc5f9a6659b3
-m
-=src/main/java/com/revature/tribble/controller/Dispatcher.java,b\a\baaf4bebc26e5cc299cbd7f435ca16aa8e47ee08
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 a
 1src/main/java/com/revature/tribble/model/Lab.java,2\b\2bca3dd909a548238d8b1a8ef9e296033c7bad8a
 e

@@ -4,6 +4,7 @@ import java.io.Closeable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionFactory implements Closeable {
 
@@ -35,14 +36,11 @@ public class ConnectionFactory implements Closeable {
     private Connection createConnection() {
 
         try {
-            DatabaseProperties props = DatabaseProperties.getInstance();
-
-            String connectionTemplate = props.getProfile();
-            String url = props.getPropertyByKey(connectionTemplate+".url")+"?currentSchema="+props.getPropertyByKey(connectionTemplate+".schema");
-            return DriverManager.getConnection(
-                    url,
-                    props.getPropertyByKey(connectionTemplate+".username"),
-                    props.getPropertyByKey(connectionTemplate+".password"));
+            String url = "jdbc:postgresql://revature-project.cu9tcaqykiil.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=tribble";
+            Properties props = new Properties();
+            props.setProperty("user","OneLeggedPigeon");
+            props.setProperty("password","password");
+            return DriverManager.getConnection(url, props);
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

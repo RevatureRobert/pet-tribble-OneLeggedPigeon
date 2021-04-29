@@ -75,7 +75,7 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
             e.printStackTrace();
         }
         for(Tribble t : lab.getTribbles()) {
-            tribbleDao.insert(t);
+            tribbleDao.insertOrUpdate(t);
         }
     }
 

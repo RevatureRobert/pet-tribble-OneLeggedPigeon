@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+    <Resource
+            name="jdbc/db" type="javax.sql.DataSource"
+            maxActive="100" maxIdle="30" maxWait="10000"
+            url="jdbc:postgresql://revature-project.cu9tcaqykiil.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=tribble"
+            driverClassName="com.postgress.jdbc.Driver"
+            username="OneLeggedPigeon" password="pass"
+    />
+</Context>
