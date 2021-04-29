@@ -25,7 +25,7 @@ public class TribbleDao implements com.revature.tribble.dao.GenericDao<Tribble> 
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 Tribble t =  new Tribble();
-                t.setName(rs.getString("name"));
+                t.setName(rs.getString("t_name"));
                 t.setColor(rs.getString("color"));
                 t.setMass(rs.getInt("mass"));
                 t.setId(rs.getInt("id"));
@@ -49,7 +49,7 @@ public class TribbleDao implements com.revature.tribble.dao.GenericDao<Tribble> 
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 isFound=true;
-                result.setName(rs.getString("name"));
+                result.setName(rs.getString("t_name"));
                 result.setColor(rs.getString("color"));
                 result.setMass(rs.getInt("mass"));
                 result.setId(rs.getInt("id"));
@@ -71,7 +71,7 @@ public class TribbleDao implements com.revature.tribble.dao.GenericDao<Tribble> 
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 Tribble t =  new Tribble();
-                t.setName(rs.getString("name"));
+                t.setName(rs.getString("t_name"));
                 t.setColor(rs.getString("color"));
                 t.setMass(rs.getInt("mass"));
                 t.setId(rs.getInt("id"));
@@ -87,7 +87,7 @@ public class TribbleDao implements com.revature.tribble.dao.GenericDao<Tribble> 
 
     @Override
     public void insert(Tribble tribble) {
-        try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("INSERT INTO tribble (id, color, mass, 'name', lab_id) VALUES (?,?,?,?,?)")) {
+        try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("INSERT INTO tribble (id, color, mass, t_name, lab_id) VALUES (?,?,?,?,?)")) {
             ps.setInt(1, PrimaryKeyService.newTribbleId());
             ps.setString(2,tribble.getColor());
             ps.setInt(3,tribble.getMass());
@@ -102,7 +102,7 @@ public class TribbleDao implements com.revature.tribble.dao.GenericDao<Tribble> 
     @Override
     public void insertOrUpdate(Tribble tribble) {
         if(getById(tribble.getId()) != null){
-            try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("UPDATE tribble SET color=?, mass=?, 'name'=?, lab_id=? WHERE id=?;")) {
+            try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("UPDATE tribble SET color=?, mass=?, t_name=?, lab_id=? WHERE id=?;")) {
                 ps.setString(1,tribble.getColor());
                 ps.setInt(2,tribble.getMass());
                 ps.setString(3,tribble.getName());

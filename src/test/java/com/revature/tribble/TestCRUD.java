@@ -21,7 +21,6 @@ public class TestCRUD {
         t1.setColor("red");
         t1.setMass(150);
         t1.setLabId(1);
-        td.insert(t1);
     }
 
     @Test

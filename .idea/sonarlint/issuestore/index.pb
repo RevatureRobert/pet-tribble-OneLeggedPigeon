@@ -3,8 +3,6 @@ n
 >src/main/java/com/revature/tribble/service/GenericService.java,b\4\b4400a8c9d6a462e14af29e882b881c3d9849550
 n
 >src/main/java/com/revature/tribble/servlet/TribbleServlet.java,7\d\7da089e75958b8b4aa5e97d1c9b25e008b24fcaa
-h
-8src/main/java/com/revature/tribble/util/SessionUtil.java,5\f\5ff58aa7a51c35c6a7284eef847da9c17fd252ab
 m
 =src/main/java/com/revature/tribble/servlet/CustomServlet.java,a\c\ac99ba2bfb7d76eb5d644147274471cd5987a9c6
 j
@@ -19,5 +17,3 @@ a
 1src/main/java/com/revature/tribble/model/Lab.java,2\b\2bca3dd909a548238d8b1a8ef9e296033c7bad8a
 e
 5src/main/java/com/revature/tribble/model/Tribble.java,1\c\1cf5c77dd66bec20c3250ccc8e9269dac801e3ea
-f
-6src/main/java/com/revature/tribble/dao/TribbleDao.java,b\5\b52f77e7ddf6cc7d9c59af7c836c13c71da6f6c2

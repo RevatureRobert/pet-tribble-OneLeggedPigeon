@@ -29,7 +29,7 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 Lab l =  new Lab();
-                l.setName(rs.getString("name"));
+                l.setName(rs.getString("l_name"));
                 int resultId = rs.getInt("id");
                 l.setId(resultId);
                 l.setTribbles(tribbleDao.getByLabId(resultId));
@@ -52,7 +52,7 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 isFound=true;
-                result.setName(rs.getString("name"));
+                result.setName(rs.getString("l_name"));
                 int resultId = rs.getInt("id");
                 result.setId(resultId);
                 result.setTribbles(tribbleDao.getByLabId(resultId));
@@ -67,7 +67,7 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
 
     @Override
     public void insert(Lab lab) {
-        try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("INSERT INTO lab (id, 'name') VALUES (?,?)")) {
+        try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("INSERT INTO lab (id, l_name) VALUES (?,?)")) {
             ps.setInt(1, PrimaryKeyService.newLabId());
             ps.setString(2,lab.getName());
             ps.executeUpdate();
@@ -82,7 +82,7 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
     @Override
     public void insertOrUpdate(Lab lab) {
         if(getById(lab.getId()) != null){
-            try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("UPDATE lab 'name'=? WHERE id=?;")) {
+            try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("UPDATE lab l_name=? WHERE id=?;")) {
                 ps.setString(1,lab.getName());
                 ps.setInt(2,lab.getId());
                 ps.executeUpdate();
