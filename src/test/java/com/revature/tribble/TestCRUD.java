@@ -12,13 +12,15 @@ public class TestCRUD {
 
     @BeforeEach
     void setUp() {
+
         td = new TribbleDao();
         // create some test objects
         TribbleDao td = new TribbleDao();
         t1 = new Tribble();
-        t1.setName("fred");
-        t1.setColor("green");
-        t1.setMass(100);
+        t1.setName("frod");
+        t1.setColor("red");
+        t1.setMass(150);
+        t1.setLabId(1);
         td.insert(t1);
     }
 

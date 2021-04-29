@@ -9,8 +9,6 @@ m
 =src/main/java/com/revature/tribble/servlet/CustomServlet.java,a\c\ac99ba2bfb7d76eb5d644147274471cd5987a9c6
 j
 :src/main/java/com/revature/tribble/servlet/LabServlet.java,5\b\5b783c22d81b3f6db9dc917cac4e6827dae5dcfc
-j
-:src/main/java/com/revature/tribble/service/LabService.java,e\7\e7a6214bd37d4272f9646fbf1b8e78c506aec67a
 r
 Bsrc/main/java/com/revature/tribble/controller/FrontController.java,8\d\8dd0881e64b6233a96ff1a76d8ecbc5f9a6659b3
 m
@@ -21,11 +19,5 @@ a
 1src/main/java/com/revature/tribble/model/Lab.java,2\b\2bca3dd909a548238d8b1a8ef9e296033c7bad8a
 e
 5src/main/java/com/revature/tribble/model/Tribble.java,1\c\1cf5c77dd66bec20c3250ccc8e9269dac801e3ea
-n
->src/main/java/com/revature/tribble/service/TribbleService.java,3\3\332fe2ca6f3deba49533ea8fa0ca9c582342ea2f
-`
-0src/test/java/com/revature/tribble/TestCRUD.java,4\b\4b89bc20d8b500ee9c331260228bdfd2586e278c
 f
 6src/main/java/com/revature/tribble/dao/TribbleDao.java,b\5\b52f77e7ddf6cc7d9c59af7c836c13c71da6f6c2
-b
-2src/main/java/com/revature/tribble/dao/LabDao.java,b\2\b28e575df6e840f81af5ca6632f8091c135588e2

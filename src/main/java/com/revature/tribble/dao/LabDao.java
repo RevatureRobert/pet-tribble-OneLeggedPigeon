@@ -2,6 +2,7 @@ package com.revature.tribble.dao;
 
 
 import com.revature.tribble.model.Lab;
+import com.revature.tribble.model.Tribble;
 import com.revature.tribble.service.PrimaryKeyService;
 import com.revature.tribble.util.ConnectionSession;
 
@@ -13,9 +14,11 @@ import java.util.List;
 
 public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
     private ConnectionSession ses;
+    private TribbleDao tribbleDao;
 
     public LabDao() {
         ses = new ConnectionSession();
+        tribbleDao = new TribbleDao();
     }
 
     @Override
@@ -27,7 +30,9 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
             while(rs.next()) {
                 Lab l =  new Lab();
                 l.setName(rs.getString("name"));
-                l.setId(rs.getInt("id"));
+                int resultId = rs.getInt("id");
+                l.setId(resultId);
+                l.setTribbles(tribbleDao.getByLabId(resultId));
                 result.add(l);
             }
         } catch (ClassCastException | SQLException e) {
@@ -48,7 +53,9 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
             while(rs.next()) {
                 isFound=true;
                 result.setName(rs.getString("name"));
-                result.setId(rs.getInt("id"));
+                int resultId = rs.getInt("id");
+                result.setId(resultId);
+                result.setTribbles(tribbleDao.getByLabId(resultId));
             }
         } catch (ClassCastException | SQLException e) {
             e.printStackTrace();
@@ -67,6 +74,9 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
         } catch (ClassCastException | SQLException e) {
             e.printStackTrace();
         }
+        for(Tribble t : lab.getTribbles()) {
+            tribbleDao.insert(t);
+        }
     }
 
     @Override
@@ -79,6 +89,9 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
             } catch (ClassCastException | SQLException e) {
                 e.printStackTrace();
             }
+            for(Tribble t : lab.getTribbles()) {
+                tribbleDao.insertOrUpdate(t);
+            }
         } else {
             insert(lab);
         }
@@ -89,6 +102,7 @@ public class LabDao implements com.revature.tribble.dao.GenericDao<Lab> {
         try(PreparedStatement ps = ses.getActiveConnection().prepareStatement("DELETE FROM lab WHERE id=?;")) {
             ps.setInt(1, lab.getId());
             ps.executeUpdate();
+            // I'm allowing orphaned Tribbles
         } catch (ClassCastException | SQLException e) {
             e.printStackTrace();
         }
